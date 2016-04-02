@@ -45,7 +45,25 @@ var mCurrentIndex = 0;
 
 // XMLHttpRequest variable
 var mRequest = new XMLHttpRequest();
-mRequest.open('GET', images.json );
+var mURL = "images.json";
+var mRequest = new XMLHttpRequest();
+mRequest.onreadystatechange = function() {
+// Do something interesting if file is opened successfully
+	if (mRequest.readyState == 4 && mRequest.status == 200) {
+	try {
+// Let’s try and see if we can parse JSON (see next slide)
+		var mJson = JSON.parse(mRequest.responseText);
+// LOOP THROUGH the mJSON array here and fill up the
+// mImages array with GalleryImage objects
+// Let’s print out the JSON; It will likely show as “obj”
+console.log(mJson);
+} catch(err) {
+console.log(err.message)
+}
+}
+};
+mRequest.open("GET",mURL, true);
+mRequest.send();
 
 // Array holding GalleryImage objects (see below).
 var mImages = [];
