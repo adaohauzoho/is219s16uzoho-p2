@@ -52,7 +52,7 @@ mRequest.onreadystatechange = function() {
 	if (mRequest.readyState == 4 && mRequest.status == 200) {
 	try {
 // Let’s try and see if we can parse JSON (see next slide)
-		 mJson = JSON.parse(mRequest.responseText);
+		 var mJson = JSON.parse(mRequest.responseText);
 // LOOP THROUGH the mJSON array here and fill up the
 // mImages array with GalleryImage objects
 // Let’s print out the JSON; It will likely show as “obj”
@@ -70,10 +70,15 @@ var mImages = [];
 
 // Holds the retrived JSON information
 var mJson;
+{"retrived":[
+    {"URL":"", "metadata":""},
+    {"URL":"", "metadata":""},
+    {"URL":"", "metadata":""}
+]}
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = 'insert_url_here_to_image_json';
+var mUrl = 'images.json"';
 
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
