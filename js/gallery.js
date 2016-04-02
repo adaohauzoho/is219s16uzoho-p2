@@ -106,7 +106,7 @@ function GalleryImage() {
 	String : location
 	String : description
 	String : date
-	String : img
+	String : value	=	“moreIndicator	rot90”
 	
 	//implement me as an object to hold the following data about an image:
 	//1. location where photo was taken
