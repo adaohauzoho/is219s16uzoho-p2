@@ -66,11 +66,10 @@ mRequest.open("GET",mURL, true);
 mRequest.send();
 
 // Array holding GalleryImage objects (see below).
-var mImages = [];
+var mImages = new Array [];
 
 // Holds the retrived JSON information
-var mJson;
-{"retrived":[
+var mJson = "retrived":[
     {"URL":"", "metadata":""},
     {"URL":"", "metadata":""},
     {"URL":"", "metadata":""}
