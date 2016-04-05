@@ -37,6 +37,14 @@ function swapPhoto() {
 	//Access the img element and replace its source
 	//with a new image from your images array which is loaded 
 	//from the JSON string
+	  if(mCurrentIndex > mImages.length-1){
+    	mCurrentIndex = 0;
+  		}
+  		else if (mCurrentIndex < 0) {
+    	mCurrentIndex = mImages.length-1;
+  		}
+
+
 	console.log('swap photo');
 }
 
@@ -113,4 +121,16 @@ function GalleryImage(location, description, date, img) {
 	//2. description of photo
 	//3. the date when the photo was taken
 	//4. either a String (src URL) or an an HTMLImageObject (bitmap of the photo. https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
+}
+function getQueryParams(qs) {
+  qs = qs.split("+").join(" ");
+  var params = {}, tokens, re = /[?&]?([^=]+)=([^&]*)/g;
+  while (tokens = re.exec(qs)) {
+    params[decodeURIComponent(tokens[1])] = decodeURIComponent(tokens[2]);
+  }
+  return params;
+}
+
+var $_GET = getQueryParams(document.location.search);
+console.log($_GET["json"]); 
 }
