@@ -60,8 +60,8 @@ function swapPhoto() {
 }
 console.log(mCurrentIndex)
 
-  $('#slideShow .photoHolder img').attr('src',mImages[mCurrentIndex].img);
-  $('#slideShow .details .location').text("Location: "+mImages[mCurrentIndex].location);
+  $('#slideShow .photoHolder img').attr('src',mImages[mCurrentIndex].imgPath);
+  $('#slideShow .details .location').text("Location: "+mImages[mCurrentIndex].imgLocation);
   $('#slideShow .details .description ').text("Description: "+mImages[mCurrentIndex].description);
   $('#slideShow .details .date ').text("Date: "+mImages[mCurrentIndex].date);
 
@@ -132,11 +132,11 @@ window.addEventListener('load', function() {
 
 }, false);
 
-function GalleryImage(location, description, date, img) {
-	this.location = location;
+function GalleryImage(imgLocation, description, date, imgPath) {
+	this.imgLocation = imgLocation;
 	this.description = description;
 	this.date = date;
-	this.img = img;
+	this.imgPath = imgPath;
 	
 	//implement me as an object to hold the following data about an image:
 	//1. location where photo was taken
@@ -151,7 +151,7 @@ function reqListener () {
     var mJson = JSON.parse(this.responseText);
     for(var i = 0; i < mJson.images.length; i++) {
       var tempInfo = mJson.images[i];
-      var galleryImage = new GalleryImage(tempInfo.location,tempInfo.description,tempInfo.date,tempInfo.img);
+      var galleryImage = new GalleryImage(tempInfo.imgLocation,tempInfo.description,tempInfo.date,tempInfo.imgPath);
       mImages.push(galleryImage);
     }
   }catch(error){
