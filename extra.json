@@ -1,0 +1,35 @@
+{
+    "images": [
+        
+        {
+            "imgPath": "img/africa/gazelle.jpg",
+            "imgLocation": "Africa",
+            "description": "Gazelle",
+            "date": "04/05/2016"
+        },
+        {
+            "imgPath": "img/Africa/zebras.jpg",
+            "imgLocation": "Africa",
+            "description": "Zebras",
+            "date": "04/05/2016"
+        },
+        {
+            "imgPath": "img/Africa/giraffe.jpg",
+            "imgLocation": "Africa",
+            "description": "Giraffe",
+            "date": "04/05/2016"
+        },
+        {
+            "imgPath": "img/Africa/lion.jpg",
+            "imgLocation": "Africa",
+            "description": "Lion",
+            "date": "04/05/2016"
+        },
+        {
+            "imgPath": "img/Africa/monkey.jpg",
+            "imgLocation": "Africa",
+            "description": "Monkey",
+            "date": "04/05/2016"
+        }
+  ]
+}
