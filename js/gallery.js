@@ -170,7 +170,7 @@ function reqListener () {
     var mJson = JSON.parse(this.responseText);
     for(var i = 0; i < mJson.images.length; i++) {
       var tempInfo = mJson.images[i];
-      var galleryImage = new GalleryImage(tempInfo.imgLocation,tempInfo.description,tempInfo.date,tempInfo.imgPath);
+      var galleryImage = new GalleryImage(tempInfo.location,tempInfo.description,tempInfo.date,tempInfo.img);
       mImages.push(galleryImage);
     }
   }catch(error){
