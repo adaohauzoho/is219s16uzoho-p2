@@ -82,18 +82,14 @@ mRequest.open("GET",mURL, true);
 mRequest.send();
 
 // Array holding GalleryImage objects (see below).
-var mImages = new Array [];
+var mImages = [];
 
 // Holds the retrived JSON information
-var mJson = "retrived":[
-    {"URL":"", "metadata":""},
-    {"URL":"", "metadata":""},
-    {"URL":"", "metadata":""}
-]}
+var mJson;
 
 // URL for the JSON to load by default
 // Some options for you are: images.json, images.short.json; you will need to create your own extra.json later
-var mUrl = 'images.json"';
+var mUrl = $_GET['json'];
 
 
 //You can optionally use the following function as your event callback for loading the source of Images from your json data (for HTMLImageObject).
@@ -119,10 +115,10 @@ window.addEventListener('load', function() {
 }, false);
 
 function GalleryImage(location, description, date, img) {
-	this. = location;
-	this. = description;
-	this. = date;
-	this. = img;
+	this.location = location;
+	this.description = description;
+	this.date = date;
+	this.img = img;
 	
 	//implement me as an object to hold the following data about an image:
 	//1. location where photo was taken
